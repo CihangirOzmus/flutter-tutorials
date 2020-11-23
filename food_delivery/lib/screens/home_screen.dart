@@ -5,6 +5,8 @@ import 'package:food_delivery/screens/restaurant_screen.dart';
 import 'package:food_delivery/widgets/rating_stars.dart';
 import 'package:food_delivery/widgets/recent_orders.dart';
 
+import 'cart_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -15,8 +17,10 @@ class _HomeScreenState extends State<HomeScreen> {
     List<Widget> restaurantList = [];
     restaurants.forEach((restaurant) {
       restaurantList.add(GestureDetector(
-        onTap: () => Navigator.push(context,
-            MaterialPageRoute(builder: (_) => RestaurantScreen(restaurant: restaurant))),
+        onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) => RestaurantScreen(restaurant: restaurant))),
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
           decoration: BoxDecoration(
@@ -103,7 +107,10 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('Food Delivery'),
         actions: [
           FlatButton(
-            onPressed: () {},
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => CartScreen()),
+            ),
             child: Text(
               'Cart (${currentUser.cart.length})',
               style: TextStyle(
