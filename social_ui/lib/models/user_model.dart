@@ -1,4 +1,3 @@
-
 import 'package:social_ui/models/post_model.dart';
 
 class User {
