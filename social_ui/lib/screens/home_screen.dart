@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:social_ui/data/data.dart';
+import 'package:social_ui/widgets/custom_drawer.dart';
 import 'package:social_ui/widgets/following_users.dart';
 import 'package:social_ui/widgets/posts_carousel.dart';
 
@@ -55,6 +56,9 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             ),
           ],
         ),
+      ),
+      drawer: CustomDrawer(
+
       ),
       body: ListView(
         children: [
